@@ -54,6 +54,15 @@
     submitting = true
 
     try {
+      if (password.length < 10) {
+        toast({
+          content: $t('Hasło powinno mieć przynajmniej 10 znaków!'),
+          type: 'error',
+        });
+        submitting = false;
+        return; // Stop submission
+      }
+
       const res = await getClient(instance, fetch).register({
         username: username,
         email: email,

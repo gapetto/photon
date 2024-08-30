@@ -88,6 +88,9 @@
 
       communities = list.communities.map((c) => c.community)
     }
+
+    data.language_id = 128
+
   })
 
   onDestroy(() => {
@@ -347,7 +350,7 @@
     <Select
       class="w-max"
       label={$t('settings.app.lang.title')}
-      bind:value={data.language_id}
+      value={data.language_id?.toString()}
     >
       {#each $site?.all_languages as language}
         <option value={language.id.toString()}>{language.name}</option>
