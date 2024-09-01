@@ -182,11 +182,11 @@
       const oldData = { ...data }
 
       if (res.metadata.title) data.title = res.metadata.title
-      if (res.metadata.description)
-        data.body = res.metadata.description
-          .split('\n')
-          .map((l) => `> ${l}`)
-          .join('\n')
+      // if (res.metadata.description)
+      //   data.body = res.metadata.description
+      //     .split('\n')
+      //     .map((l) => `> ${l}`)
+      //     .join('\n')
 
       toast({
         content: $t('toast.generatedTitle'),
